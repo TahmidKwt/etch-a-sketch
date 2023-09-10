@@ -74,6 +74,11 @@ document.getElementById("random-btn").addEventListener("click", () => {
 	getRandomColor;
 });
 
+document.getElementById("erase-btn").addEventListener("click", () => {
+	colorSetting ="eraser";
+	mouseoverHandler;
+});
+
 
 const mouseoverHandler = () => {
 
@@ -96,3 +101,18 @@ const mouseoverHandler = () => {
 
 };
 
+
+const clearDisplay = () => {
+  
+	const gridBox = document.querySelectorAll(".row");
+  
+	gridBox.forEach((box) => {
+		box.style.backgroundColor = "";
+  });
+
+}
+
+document.getElementById("clear-btn").addEventListener("click", clearDisplay);
+
+displayGrid(16, 16);
+mouseoverHandler();
