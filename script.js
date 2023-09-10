@@ -29,6 +29,8 @@ const udateDimensions = () => {
 
 	} else displayGrid(columns, rows);
 
+	mouseoverHandler();
+
 };
 
 document.getElementById("grid-btn").addEventListener("click", updateDimensions);
@@ -71,3 +73,26 @@ document.getElementById("random-btn").addEventListener("click", () => {
 	colorSetting = "random";
 	getRandomColor;
 });
+
+
+const mouseoverHandler = () => {
+
+	const gridBox = document.querySelectorAll(".row");
+
+	gridBox.forEach((box) => {
+		box.addEventListener("click", () => {
+
+		if (colorSetting === "random") {        
+			box.style.backgroundColor = getRandomColor();
+		} else if (colorSetting === "custom") {
+			box.style.backgroundColor = color;
+		} else if (colorSetting === "eraser") {
+			box.style.backgroundColor = "";
+		};
+
+    
+		});  
+	});
+
+};
+
