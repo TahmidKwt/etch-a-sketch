@@ -32,3 +32,30 @@ const udateDimensions = () => {
 };
 
 document.getElementById("grid-btn").addEventListener("click", updateDimensions);
+
+
+const getRandomColor = () => {
+
+	let red = Math.floor(Math.random() *256);
+	let green = Math.floor(Math.random() *256);  
+	let blue = Math.floor(Math.random() *256);
+
+	return `rgb(${red}, ${green}, ${blue})`;
+
+};
+
+
+const getCustomColor = () => {
+
+	let red = parseInt(prompt("Value for Red: (Max 255)"));  
+	let green = parseInt(prompt("Value for Green: (Max 255)"));
+	let blue = parseInt(prompt("Value for Blue: (Max 255)"));
+  
+	if (isNaN(red) || red < 0 || red > 255 || isNaN(blue) || blue < 0 || blue > 255 || isNaN(green) || green < 0 || green > 255) {
+
+		alert("Value are invaid. By default the custom color will be set to red.");
+		color = `rgb(255, 0, 0)`;
+  
+	} else color = `rgb(${red}, ${green}, ${blue})`;
+
+};
