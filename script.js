@@ -1,6 +1,7 @@
+const container = document.querySelector(".container");
+
 const displayGrid = (columns, rows) => {
 
-	const container = document.querySelector(".container");
 	container.innerHTML = "";
   
 	for (let i = 0; i < columns; i++) {  
@@ -18,14 +19,15 @@ const displayGrid = (columns, rows) => {
   
 };
 
-const udateDimensions = () => {
+const updateDimensions = () => {
 
-	const columns = parseInt(prompt("Set Columns: (Max is 50)"));
-	const rows = parseInt(prompt("Set Rows: (Max is 50)"));
+	const columns = parseInt(prompt("Set Columns: (Max is 100)"));
+	const rows = parseInt(prompt("Set Rows: (Max is 100)"));
   
-	if (isNaN(columns) || columns < 1 || columns > 50 || isNaN(rows) || rows < 1 || rows > 50) {
+	if (isNaN(columns) || columns < 1 || columns > 100 || isNaN(rows) || rows < 1 || rows > 100) {
 
-		alert("Dimensions are invaid. By default dimensions wil be set to 16×16 grid size")    		      displayGrid(16, 16);
+		alert("Dimensions are invaid. By default dimensions wil be set to 16×16 grid size");
+		displayGrid(16, 16);
 
 	} else displayGrid(columns, rows);
 
@@ -85,7 +87,7 @@ const mouseoverHandler = () => {
 	const gridBox = document.querySelectorAll(".row");
 
 	gridBox.forEach((box) => {
-		box.addEventListener("click", () => {
+		box.addEventListener("mouseover", () => {
 
 		if (colorSetting === "random") {        
 			box.style.backgroundColor = getRandomColor();
@@ -93,7 +95,7 @@ const mouseoverHandler = () => {
 			box.style.backgroundColor = color;
 		} else if (colorSetting === "eraser") {
 			box.style.backgroundColor = "";
-		};
+		}
 
     
 		});  
@@ -110,7 +112,7 @@ const clearDisplay = () => {
 		box.style.backgroundColor = "";
   });
 
-}
+};
 
 document.getElementById("clear-btn").addEventListener("click", clearDisplay);
 
