@@ -44,6 +44,8 @@ const getRandomColor = () => {
 
 };
 
+let color;
+let colorSetting;
 
 const getCustomColor = () => {
 
@@ -59,3 +61,13 @@ const getCustomColor = () => {
 	} else color = `rgb(${red}, ${green}, ${blue})`;
 
 };
+
+document.getElementById("custom-btn").addEventListener("click", () => {
+	colorSetting = "custom";
+	getCustomColor();
+});
+
+document.getElementById("random-btn").addEventListener("click", () => {
+	colorSetting = "random";
+	getRandomColor;
+});
