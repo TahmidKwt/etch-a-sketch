@@ -34,6 +34,7 @@ h1 {
 	background: #FAF9F6;
 	border: 3px solid lightgray;
 	border-radius: 18px;
+	box-shadow: 0px 1px 5px rgb(171, 171, 171);
 }
 
 button {
@@ -44,22 +45,22 @@ button {
 	padding: 12px;
 	border: 3px solid black;
 	border-radius: 18px;
+	box-shadow: 0px 1px 5px rgb(171, 171, 171);
 	transition: all 0.3s;
 }
 
 button:hover {
-	font-size: 24px;
-	background: black;
-	border: 3px solid lightgray;
-	color: peachpuff;
+	border: 3px solid lightblue;
+	box-shadow: 0px 3px 5px rgb(129, 129, 129);
 }
 
 .container {
 	display: flex;
 	height: 700px;
 	width: 700px;
-	border: 5px solid black;
-	border-radius: 12px;
+	border: 3px solid gray;
+	border-radius: 8px;
+	box-shadow: 0px 3px 10px rgb(192, 192, 192);
 }
 
 .column, .row {
