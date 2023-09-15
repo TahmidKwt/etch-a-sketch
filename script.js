@@ -31,6 +31,7 @@ const updateDimensions = () => {
 
 	} else displayGrid(columns, rows);
 
+	colorSetting = "";
 	mouseoverHandler();
 
 };
@@ -107,6 +108,7 @@ const mouseoverHandler = () => {
 const clearDisplay = () => {
   
 	const gridBox = document.querySelectorAll(".row");
+	colorSetting = "";
   
 	gridBox.forEach((box) => {
 		box.style.backgroundColor = "";
@@ -118,3 +120,18 @@ document.getElementById("clear-btn").addEventListener("click", clearDisplay);
 
 displayGrid(16, 16);
 mouseoverHandler();
+
+const buttons = document.querySelectorAll("button")
+
+buttons.forEach((button) => {
+
+        button.addEventListener("click", (e) => {
+                
+                buttons.forEach((button) => { 
+                  button.classList.remove("clicked");
+                });
+                e.target.classList.add("clicked");
+
+        });
+
+});
