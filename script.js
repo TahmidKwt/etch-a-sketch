@@ -8,6 +8,11 @@ const displayGrid = (columns, rows) => {
 		let column = document.createElement("div");
 		column.classList.add("column");
 
+	        let lastRow = document.createElement("div");  	
+		lastRow.classList.add("taken");  
+		lastRow.classList.add("row"); 
+		column.appendChild(lastRow);
+
 		for (let j = 0; j < rows; j++) {  
 		let row = document.createElement("div");
 		row.classList.add("row");
